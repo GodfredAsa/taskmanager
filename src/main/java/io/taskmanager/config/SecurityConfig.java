@@ -21,6 +21,8 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.HttpStatusEntryPoint;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 import static io.taskmanager.constant.AuthenticationConstant.AUTHENTICATION_URL;
 import static io.taskmanager.constant.AuthenticationConstant.REGISTRATION_URL;
 
@@ -43,8 +45,7 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .sessionManagement(c -> c.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .exceptionHandling(c -> c.authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED)))
-                .authorizeHttpRequests(authorize ->
-                        authorize.requestMatchers(REGISTRATION_URL, AUTHENTICATION_URL).permitAll()
+                .authorizeHttpRequests(authorize -> authorize.requestMatchers(REGISTRATION_URL, AUTHENTICATION_URL).permitAll()
                                 .anyRequest().authenticated()
                 ).addFilterBefore(jwtTokenAuthenticationFilter, UsernamePasswordAuthenticationFilter.class).build();
     }

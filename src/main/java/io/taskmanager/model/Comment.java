@@ -1,11 +1,7 @@
 package io.taskmanager.model;
 
-import io.taskmanager.client.response.CommentResponse;
-import io.taskmanager.exception.domain.TaskNotFoundException;
-import io.taskmanager.exception.domain.UserNotFoundException;
 import jakarta.persistence.*;
 import lombok.*;
-
 
 @Entity
 @Table(name = "comments")

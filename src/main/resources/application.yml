@@ -10,8 +10,12 @@ spring:
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
-      ddl-auto: create-drop
-#      ddl-auto: update
+#      ddl-auto: create-drop
+      ddl-auto: update
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+
 
     show-sql: true
     database-platform: org.hibernate.dialect.PostgreSQLDialect
@@ -24,6 +28,8 @@ logging:
     org:
       springframework:
         web: DEBUG
+
+
 
 
 

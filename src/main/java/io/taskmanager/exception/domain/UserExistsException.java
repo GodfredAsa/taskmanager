@@ -1,4 +1,4 @@
-package io.taskmanager.exception;
+package io.taskmanager.exception.domain;
 
 public class UserExistsException extends Exception {
 

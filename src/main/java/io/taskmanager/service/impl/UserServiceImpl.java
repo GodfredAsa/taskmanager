@@ -2,7 +2,7 @@ package io.taskmanager.service.impl;
 
 import io.taskmanager.client.request.RegistrationRequest;
 import io.taskmanager.enumeration.Role;
-import io.taskmanager.exception.UserExistsException;
+import io.taskmanager.exception.domain.UserExistsException;
 import io.taskmanager.exception.domain.*;
 import io.taskmanager.model.User;
 import io.taskmanager.repository.UserRepository;

@@ -1,22 +1,18 @@
 package io.taskmanager.controler;
 
 import io.taskmanager.client.request.TaskRequest;
-import io.taskmanager.client.response.HttpResponse;
 import io.taskmanager.exception.domain.TaskNotFoundException;
-import io.taskmanager.exception.domain.TaskExistsException;
 import io.taskmanager.model.Task;
 import io.taskmanager.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
-import java.util.Optional;
+import static org.springframework.http.HttpStatus.OK;
 
-import static io.taskmanager.constant.TaskConstants.TASK_NOT_FOUND;
-import static org.springframework.http.HttpStatus.*;
-
-@RestController
+@CrossOrigin("*")
 @RequestMapping("/api/v1/tasks")
+@RestController
 public class TaskController {
     private final TaskService taskService;
 
